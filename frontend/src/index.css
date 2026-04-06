@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fdfaf5;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4a882' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: #2a1c10;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-500 hover:bg-accent-600 text-parchment-50 font-medium
+           px-6 py-3 rounded-xl transition-all duration-200
+           shadow-md hover:shadow-lg active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply border border-ink-200 hover:border-ink-400 text-ink-700
+           font-medium px-5 py-2.5 rounded-xl
+           transition-all duration-200 hover:bg-ink-50 active:scale-95;
+  }
+
+  .card {
+    @apply bg-white/80 backdrop-blur-sm border border-parchment-200 rounded-2xl shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-parchment-300 rounded-xl
+           px-4 py-3 text-ink-900 placeholder-ink-300
+           focus:outline-none focus:ring-2 focus:ring-accent-400/40 focus:border-accent-400
+           transition-all duration-200;
+  }
+
+  .section-label {
+    @apply font-mono text-xs tracking-widest uppercase text-ink-400;
+  }
+
+  .display-heading {
+    @apply font-display text-ink-900 leading-tight;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f9f3e6; }
+::-webkit-scrollbar-thumb { background: #d0bfa9; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b89e7e; }
+
+/* Page animation */
+.page-enter {
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
