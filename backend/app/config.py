@@ -18,7 +18,7 @@ class Config:
     # CORS
     ALLOWED_ORIGINS: list[str] = [
         o.strip()
-        for o in os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+        for o in os.environ.get("ALLOWED_ORIGINS", "https://ai-wiki-quiz-gen-01-ao56.vercel.app").split(",")
         if o.strip()
     ]
 
