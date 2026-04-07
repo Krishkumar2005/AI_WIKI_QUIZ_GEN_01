@@ -22,13 +22,13 @@
 ```
 wikiquiz/
 ├── README.md
+├── claude.md                          ← AI guidance — how AI was used to build this project
+├── agents.md                          ← AI coding standards enforced during development
 ├── backend/
 │   ├── main.py                        ← Entry point
 │   ├── requirements.txt
 │   ├── supabase_schema.sql            ← Run this in Supabase SQL Editor
 │   ├── .env.example                   ← Copy to .env
-│   ├── claude.md                      ← AI guidance constraints
-│   ├── agents.md                      ← AI coding standards
 │   └── app/
 │       ├── config.py                  ← All env reads + fail-fast validation
 │       ├── db.py                      ← Supabase client singleton
@@ -154,10 +154,10 @@ Runs fully offline — Supabase and Gemini are mocked. Covers input validation, 
 
 | File | Purpose |
 |---|---|
-| `backend/claude.md` | Rules for AI tools — layer boundaries, forbidden changes |
-| `backend/agents.md` | Coding standards for AI agents — patterns, review checklist |
+| `claude.md` | How AI was used to build this project — context given, constraints imposed, decisions kept by me |
+| `agents.md` | Coding standards enforced on AI-generated code — backend + frontend, review checklist, verification approach |
 
-These ensure AI-generated code follows the same architecture rules as human-written code.
+Both frontend and backend were built using Claude. These files document how AI was guided and how its output was verified.
 
 ---
 
